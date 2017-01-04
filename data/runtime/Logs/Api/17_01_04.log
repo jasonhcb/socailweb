@@ -1,0 +1,6 @@
+[ 2017-01-04T20:39:36+08:00 ] ::1 /socailsys/index.php?g=api&m=oauth&a=login&type=qq
+ERR: 请配置您申请的APP_KEY和APP_SECRET
+
+[ 2017-01-04T20:39:44+08:00 ] ::1 /socailsys/index.php?g=api&m=oauth&a=login&type=sina
+ERR: 请配置您申请的APP_KEY和APP_SECRET
+

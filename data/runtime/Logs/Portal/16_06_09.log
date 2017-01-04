@@ -1,0 +1,6 @@
+[ 2016-06-09T10:24:50+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-06-09T10:28:58+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+

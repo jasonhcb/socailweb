@@ -1,0 +1,56 @@
+[ 2016-11-27T15:14:38+08:00 ] ::1 /socailsys/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `sys_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sys_role_user` [ RunTime:0.0013s ]
+SQL: SELECT `role_id` FROM sys_role_user a INNER JOIN sys_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `sys_users` SET `socail_id`='0',`user_login`='admin',`user_pass`='###9852f64c1e59286692b45cf9cd9113d1',`user_nicename`='admin',`user_email`='602077075@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-11-27 15:14:38',`create_time`='2016-05-10 01:49:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0006s ]
+
+[ 2016-11-27T15:14:50+08:00 ] ::1 /socailsys/index.php?g=Admin&m=hospital&a=getcity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001780s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `sys_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sys_hospital` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `sys_areas` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `sys_terms` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `sys_areas` WHERE `parent_id` = 120000  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000629s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2016-11-27T15:14:52+08:00 ] ::1 /socailsys/index.php?g=Admin&m=hospital&a=getcity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002249s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `sys_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sys_hospital` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `sys_areas` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `sys_terms` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `sys_areas` WHERE `parent_id` = 120100  [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001431s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001644s ]
+
+[ 2016-11-27T15:14:54+08:00 ] ::1 /socailsys/index.php?g=Admin&m=hospital&a=getcity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002599s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `sys_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sys_hospital` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `sys_areas` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `sys_terms` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `sys_areas` WHERE `parent_id` = 120103  [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001819s ]
+

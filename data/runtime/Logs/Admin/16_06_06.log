@@ -1,0 +1,20 @@
+[ 2016-06-06T17:25:03+08:00 ] ::1 /socailsys/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+
+[ 2016-06-06T17:25:05+08:00 ] ::1 /socailsys/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `sys_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sys_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM sys_role_user a INNER JOIN sys_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0015s ]
+SQL: UPDATE `sys_users` SET `socail_id`='0',`user_login`='admin',`user_pass`='###9852f64c1e59286692b45cf9cd9113d1',`user_nicename`='admin',`user_email`='602077075@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-06-06 17:25:05',`create_time`='2016-05-10 01:49:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0021s ]
+
+[ 2016-06-06T17:25:32+08:00 ] ::1 /socailsys/index.php?g=admin&m=socailfind&a=edit&id=2
+ERR: 模板不存在:admin/themes/simplebootx/Admin/Socailfind/edit.html
+

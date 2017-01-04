@@ -1,0 +1,56 @@
+[ 2016-05-24T18:12:00+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-05-24T18:12:17+08:00 ] ::1 /socailsys/index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001892s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `sys_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sys_role_user` [ RunTime:0.0012s ]
+SQL: SELECT `role_id` FROM sys_role_user a INNER JOIN sys_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sys_terms` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: validate /Applications/MAMP/htdocs/socailsys/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /Applications/MAMP/htdocs/socailsys/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `sys_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('26','装修服务','','article','','','','list','article') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sys_terms` WHERE ( term_id=26 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `sys_terms` SET `path`='0-4-26-48' WHERE ( term_id=48 ) [ RunTime:0.0003s ]
+
+[ 2016-05-24T18:33:19+08:00 ] ::1 /socailsys/index.php?g=portal&m=apoint&a=add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001966s ]
+SQL: SHOW COLUMNS FROM `sys_apoint` [ RunTime:0.0020s ]
+SQL: INSERT INTO `sys_apoint` (`user_id`,`user_name`,`user_mobile`,`apoint_time`,`term_id`,`server_id`,`appoint_id`,`from_table`) VALUES ('3','毛翠花','15182732131','2016-05-03 18:33','7','1','Soc71','hospital') [ RunTime:0.0004s ]
+
+[ 2016-05-24T18:46:39+08:00 ] ::1 /socailsys/index.php?g=portal&m=apoint&a=add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `sys_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sys_apoint` [ RunTime:0.0008s ]
+SQL: INSERT INTO `sys_apoint` (`user_id`,`server_name`,`user_name`,`user_mobile`,`apoint_time`,`term_id`,`server_id`,`appoint_id`,`from_table`,`socail_id`) VALUES ('3','牙大夫口腔','罗龙','1314723213','2016-05-03 18:44','7','2','Soc72','hospital','2') [ RunTime:0.0004s ]
+
+[ 2016-05-24T18:56:16+08:00 ] ::1 /socailsys/index.php?g=portal&m=apoint&a=add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001359s ]
+
+[ 2016-05-24T18:56:58+08:00 ] ::1 /socailsys/index.php?g=portal&m=apoint&a=add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+SQL: SHOW COLUMNS FROM `sys_users` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `sys_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sys_apoint` [ RunTime:0.0008s ]
+SQL: INSERT INTO `sys_apoint` (`user_id`,`server_name`,`user_name`,`user_mobile`,`apoint_time`,`term_id`,`server_id`,`appoint_id`,`from_table`,`socail_id`) VALUES ('3','家电维修师傅','贺楚波','18309874213','2016-05-24 18:56','9','1','Soc91','fix','2') [ RunTime:0.0003s ]
+
+[ 2016-05-24T20:22:22+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+

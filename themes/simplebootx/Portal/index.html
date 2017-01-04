@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>{$site_seo_title} {$site_name}</title>
+		<meta name="keywords" content="{$site_seo_keywords}" />
+		<meta name="description" content="{$site_seo_description}">
+		<tc_include file="Public:head" />
+		<link href="__TMPL__Public/css/slippry/slippry.css" rel="stylesheet">
+		<style>
+			.caption-wraper{position: absolute;left:50%;bottom:2em;}
+			.caption-wraper .caption{
+			position: relative;left:-50%;
+			background-color: rgba(0, 0, 0, 0.54);
+			padding: 0.4em 1em;
+			color:#fff;
+			-webkit-border-radius: 1.2em;
+			-moz-border-radius: 1.2em;
+			-ms-border-radius: 1.2em;
+			-o-border-radius: 1.2em;
+			border-radius: 1.2em;
+			}
+			@media (max-width: 767px){
+				.sy-box{margin: 12px -20px 0 -20px;}
+				.caption-wraper{left:0;bottom: 0.4em;}
+				.caption-wraper .caption{
+				left: 0;
+				padding: 0.2em 0.4em;
+				font-size: 0.92em;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				-ms-border-radius: 0;
+				-o-border-radius: 0;
+				border-radius: 0;}
+			}
+		</style>
+	</head>
+<body class="body-white">
+<tc_include file="Public:nav" />
+<div class="callout callout-info" style="margin-top: 5px;margin-bottom: 0px;background-color: #428BCA !important;">
+            <h4 style="color:white;">社区列表</h4>
+            <p>
+            	<volist name="socail" id="vo" offset="0" length='14' >
+					<a href="{:U('index',array('id'=>$vo[id]))}" style="text-decoration:none;margin-left: 20px;"><span value="{$vo.socail_name}">{$vo.socail_name}</span></a>
+				</volist>
+				<a href="{:U('index',array('id'=>"all"))}" style="text-decoration:none;margin-left: 20px;"><span value="">更多...</span></a>
+            </p>
+</div>
+<div class="row-fluid" style="margin-top: 5px;">
+<div class="span4" style="margin-left: 5px;margin-right: 5px;">
+<div class="list-group">
+  <a href="#" class="list-group-item active" style="background-color:#39668C;border-color:#39668C;">
+    社区公告 <span style="float: right;">更多</span>
+  </a>
+
+  <volist name="adv" id="vo">
+  <a href="" class="list-group-item" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{$vo.adv_name}</a>
+  </volist>
+</div>
+</div>
+<div class="span5" style="margin-left:0px; ">
+  <a href="#" class="list-group-item active" style="background-color:#39668C;border-color:#39668C;">
+    社区动态
+  </a>
+<php>
+$home_slides=sp_getslide("S_index");
+
+$home_slides=empty($home_slides)?$default_home_slides:$home_slides;
+</php>
+<ul id="homeslider" class="unstyled">
+	<foreach name="home_slides" item="vo">
+	<li>
+		<div class="caption-wraper">
+			<div class="caption">{$vo.slide_name}</div>
+		</div>
+		<a href="{$vo.slide_url}"><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt=""></a>
+	</li>
+	</foreach>
+</ul>
+</div>
+
+<div class="span3" style="margin-left: 5px;margin-right: 5px;float: left;max-width:340px;width: 340px;">
+<div class="list-group">
+  <!-- Nav tabs -->
+  <a href="#" class="list-group-item active" style="background-color:#39668C;border-color:#39668C;">
+    快捷服务
+  </a>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+  <table class="bianmintable" cellpadding="0" cellspacing="0" border="0" id="chongzhitable" style="display: block;text-align: center;">
+	<tbody>
+	<tr>
+                <td>
+                <div class="info-box" style="margin-right: 2px;">
+      				<a href="https://jiaofei.alipay.com/jiaofei.htm?_pdType=aecfbbfgeabbifdfdieh" target="_blank">
+      				<!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_01h.png"> -->
+      				<span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-flash"></i></span>
+      				<div class="caption"><span >水电气缴费</span></div>
+	 				</a>
+	 			</div>
+                </td>
+
+                <td>					
+                <div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA10" href="http://wt.taobao.com/" target="_blank">
+                    	<span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-mobile"></i></span>
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_02h.png"> -->
+                        <div class="caption"><span>手机充值</span></div>
+      				</a>
+      				</div>
+                </td>
+                <td>
+                	<div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA11" href="https://ebppprod.alipay.com/traffic.htm?_pdType=bbcjbfefaciiiieiijgj" target="_blank">
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_03.png"> -->
+                        <span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-car"></i></span>
+                    <div class="caption"><span>交通罚款</span></div>
+                     </a>
+                    </div>
+                </td>
+                <td>					
+                <div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA12" href="http://sc.189.cn/cms/udw/0128/service/beforelogin/index.php" target="_blank">
+                        <span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-wifi"></i></span>
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_04.png"> -->
+                    <div class="caption"><span>宽带缴费</span> </div></a>
+                </div>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <div class="info-box" style="margin-right: 2px;">
+      				<a href="http://tools.2345.com/kuaidi.htm" target="_blank">
+      				<!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_01h.png"> -->
+      				<span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-bicycle"></i></span>
+      				<div class="caption"><span>快递查询</span></div>
+	 				</a>
+	 			</div>
+                </td>
+
+                <td>					
+                <div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA10" href="http://www.weather.com.cn/" target="_blank">
+                    	<span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-cloud"></i></span>
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_02h.png"> -->
+                        <div class="caption"><span>天气查询</span></div>
+      				</a>
+      				</div>
+                </td>
+                <td>
+                	<div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA11" href="http://tools.2345.com/zhishi/" target="_blank">
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_03.png"> -->
+                        <span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-hand-paper-o"></i></span>
+                    <div class="caption"><span>生活百科</span></div>
+                     </a>
+                    </div>
+                </td>
+                <td>					
+                <div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA12" href="http://tools.2345.com/rili.htm" target="_blank">
+                        <span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa fa-calendar-check-o"></i></span>
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_04.png"> -->
+                    <div class="caption"><span>日历查询</span> </div></a>
+                    </div>
+                </td>
+                </tr>
+
+               	<tr>
+               		<td>					
+                <div class="info-box" style="margin-right: 2px;">
+                    <a class="bianminA12" href="http://tools.2345.com/life.htm" target="_blank">
+                        <span class="info-box-icon bg-aqua" style="margin-top: 6px;width: 80px;height: 80px;"><i class="fa  fa-search"></i></span>
+                        <!-- <img style="width:60px;" src="__TMPL__Public/images/chongzhi_04.png"> -->
+                    <div class="caption"><span>其他服务</span> </div></a>
+                    </div>
+                </td>
+               	</tr>
+        </tbody>
+        </table>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="container" style="margin-left: 5px;margin-right: 5px;width:100%;">
+
+<div class="row-fluid">
+		<div class="span4" style="width: ">
+						<div class="list-group">
+  <a href="#" class="list-group-item active" style="background-color:#39668C;border-color:#39668C;">
+    社区活动<span style="float: right;">更多</span>
+  </a>
+  <a href="#" class="list-group-item">关爱空巢老人</a>
+  <a href="#" class="list-group-item">2014-11-8邮拱局社区家庭教育指导中心教育活动</a>
+  <a href="#" class="list-group-item">文明劝导员</a>
+  <a href="#" class="list-group-item">阳光相伴老年活动</a>
+  <a href="#" class="list-group-item">邮拱局社区组织志愿者关爱辖区留守儿童</a>
+  <a href="#" class="list-group-item">红色义工进社区活动</a>
+  <a href="#" class="list-group-item">南津路街道办事处召开安全大检查安排会</a>
+  <a href="#" class="list-group-item">南津路街道办加强春季消防安全培训</a>
+</div>
+</div>
+		<div class="span8" style="margin-left: 5px;">
+			<div class="list-group">
+  <a href="#" class="list-group-item active" style="background-color:#39668C;border-color:#39668C;">
+    社区新闻<span style="float: right;">更多</span>
+  </a>
+  <volist name="posts" id="vo">
+  <a href="{:U('article/index',array('id'=>$vo['id'],'cid'=>$vo['term_id']))}" class="list-group-item" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{$vo.post_title}</a>
+  </volist>
+</div>
+		</div>
+</div>
+
+<!-- 	<div>
+		<h1 class="text-center">最新资讯</h1>
+		<h3 class="text-center">Last News</h3>
+	</div>
+	<php>
+		$lastnews=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,tid,smeta;order:listorder asc;limit:4;"); 
+	</php>
+	<div class="row">
+		<foreach name="lastnews" item="vo">
+		<php>$smeta=json_decode($vo['smeta'],true);</php>
+		<div class="span3">
+			<div class="tc-gridbox">
+				<div class="header">
+					<div class="item-image">
+						<a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">
+							<if condition="empty($smeta['thumb'])"> 
+								<img src="__TMPL__Public/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
+							<else /> 
+								<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
+							</if>
+						</a>
+					</div>
+					<h3><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h3>
+					<hr>
+				</div>
+				<div class="body">
+					<p><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></p>
+				</div>
+			</div>
+		</div>
+		</foreach>
+	</div> -->
+<div class="timeline-item">
+                    <!-- <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span> -->
+                    <h3 class="timeline-header"><a href="#">社区</a>热点站</h3>
+                    <div class="timeline-body">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      <img src="http://placehold.it/150x100" alt="..." class="margin">
+                    </div>
+                  </div>
+<tc_include file="Public:footer"/>
+</div>
+
+<tc_include file="Public:scripts"/>
+<script src="__TMPL__Public/js/slippry.min.js"></script>
+<script>
+$(function() {
+	var demo1 = $("#homeslider").slippry({
+		transition: 'fade',
+		useCSS: true,
+		captions: false,
+		speed: 1000,
+		pause: 3000,
+		auto: true,
+		preload: 'visible'
+	});
+});
+</script>
+{:hook('footer_end')}
+</body>
+</html>

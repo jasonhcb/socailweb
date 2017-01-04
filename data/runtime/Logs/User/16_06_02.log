@@ -1,0 +1,28 @@
+[ 2016-06-02T10:11:15+08:00 ] ::1 /socailsys/index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+NOTIC: [8] Undefined index: url /Applications/MAMP/htdocs/socailsys/application/Common/Controller/AppframeController.class.php 第 24 行.
+
+[ 2016-06-02T10:11:20+08:00 ] ::1 /socailsys/index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+NOTIC: [8] Undefined index: url /Applications/MAMP/htdocs/socailsys/application/Common/Controller/AppframeController.class.php 第 24 行.
+
+[ 2016-06-02T10:11:21+08:00 ] ::1 /socailsys/index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002244s ]
+NOTIC: [8] Undefined index: url /Applications/MAMP/htdocs/socailsys/application/Common/Controller/AppframeController.class.php 第 24 行.
+
+[ 2016-06-02T10:33:22+08:00 ] ::1 /socailsys/index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001249s ]
+NOTIC: [8] Undefined index: url /Applications/MAMP/htdocs/socailsys/application/Common/Controller/AppframeController.class.php 第 24 行.
+

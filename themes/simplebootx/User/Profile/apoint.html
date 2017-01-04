@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}" />
+<meta name="description" content="{$site_seo_description}">
+<meta name="author" content="ThinkCMF">
+<tc_include file="Public:head" />
+</head>
+<body class="body-white" id="top">
+	<tc_include file="Public:nav" />
+
+		<div class="container tc-main">
+                <div class="row">
+                    <div class="span3">
+	                    <tc_include file="Public:usernav"/>
+                    </div>
+                    <div class="span9">
+                          <form class="js-ajax-form" action="" method="post">
+<!--       <div class="table-actions">
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/listorders')}">{:L('SORT')}</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/check',array('check'=>1))}" data-subcheck="true">审核</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/check',array('uncheck'=>1))}" data-subcheck="true">取消审核</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/top',array('top'=>1))}" data-subcheck="true">置顶</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/top',array('untop'=>1))}" data-subcheck="true">取消置顶</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/recommend',array('recommend'=>1))}" data-subcheck="true">推荐</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/recommend',array('unrecommend'=>1))}" data-subcheck="true">取消推荐</button>
+        <button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/delete')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>
+        <button class="btn btn-primary btn-small js-articles-move" type="button">批量移动</button>
+      </div> -->
+      <table class="table table-hover table-bordered table-list">
+        <thead>
+          <tr>
+            <th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
+<!--             <th width="50">{:L('SORT')}</th> -->
+            <th>预约商家</th>
+            <th width="80">预约人</th>
+            <th width="80">联系号码</th>
+            <th width="70">预约时间</th>
+            <th width="50">{:L('STATUS')}</th>
+            <th width="70">{:L('ACTIONS')}</th>
+          </tr>
+        </thead>
+        <php>
+        $status=array("1"=>"已审核","0"=>"未审核");
+        $top_status=array("1"=>"已置顶","0"=>"未置顶");
+        $recommend_status=array("1"=>"已推荐","0"=>"未推荐");
+        </php>
+        <foreach name="result" item="vo">
+        <tr>
+          <td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.tid}" title="ID:{$vo.tid}"></td>
+<!--           <td><input name="listorders[{$vo.tid}]" class="input input-order" type="text" size="5" value="{$vo.sort}" title="ID:{$vo.id}"></td> -->
+          <td><a href="{:U('portal/article/index',array('id'=>$vo['id']))}" target="_blank"> <span>{$vo.server_name}</span></a></td>
+          <td>{$vo.user_name}</td>
+          <td>{$vo.user_mobile}</td>
+          <td>{$vo.apoint_time}</td>
+          <td>{$status[$vo['status']]}<br>{$top_status[$vo['istop']]}<br>{$recommend_status[$vo['recommended']]}
+          </td>
+          <td>
+            <a href="#">{:L('EDIT')}</a> | 
+            <a href="#">{:L('DELETE')}</a></td>
+        </tr>
+        </foreach>
+      </table>
+      <div class="pagination">{$Page}</div>
+    </form>
+                    </div>
+                </div>
+
+		<tc_include file="Public:footer" />
+
+	</div>
+	<!-- /container -->
+
+	<tc_include file="Public:scripts" />
+</body>
+</html>

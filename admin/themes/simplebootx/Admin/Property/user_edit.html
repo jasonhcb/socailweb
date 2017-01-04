@@ -1,0 +1,249 @@
+<admintpl file="header" />
+<style type="text/css">
+.pic-list li {
+	margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<!-- <li><a href="{:U('AdminPost/index')}">{:L('HOSPOTIAL_ALL')}</a></li> -->
+			<li class="active"><a href="{:U('Property/user_edit',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('USER_EDIT')}</a></li>
+		</ul>
+		<form action="{:U('Property/user_epost',array('id'=>$result['id']))}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<div class="row-fluid">
+				<div class="span12">
+					<table class="table table-bordered">
+						<!-- <tr> -->
+							<!-- <th width="80">栏目</th> -->
+<!-- 							<td>
+								<select multiple="multiple" style="max-height: 100px;" name="term[]">{$taxonomys}</select>
+								<div>windows：按住 Ctrl 按钮来选择多个选项,Mac：按住 command 按钮来选择多个选项</div>
+							</td> -->
+						<!-- </tr> -->
+						<tr>
+							<th><b>缩略图</b></th>
+								<td>
+									<div>
+										<input type="hidden" name="hos_img" id="thumb" value="{$result['user_img']}">
+										<a href="javascript:void(0);" onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','','','');return false;">
+										<if condition="empty($result['user_img'])">
+										<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb_preview" width="135" style="cursor: hand" />
+										<else />
+											<img src="{:sp_get_asset_upload_path($result['user_img'])}" id="thumb_preview" width="135" style="cursor: hand; height: 113px;"/>
+										</if>
+										</a>
+										<input type="button" class="btn btn-small" onclick="$('#thumb_preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
+									</div>
+								</td>
+						</tr>
+						<tr>
+							<th width="100">人员分类</th>
+							<td>
+								<select name="term_id" required>
+								<option value="">请选择</option>
+								<volist name="term" id="vo">
+								<eq name="vo.term_id" value="$result['term_id']">
+								<option value="{$vo.term_id}" selected>{$vo.name}</option>
+								<else />
+								<option value="{$vo.term_id}">{$vo.name}</option>
+								</eq>
+								</volist>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th width="100">物业人员</th>
+							<td>
+								<input type="text" style="width:400px;" name="adv_name" id="title" required value="{$result['user_name']}" placeholder="请输入标题"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th>联系方式</th>
+							<td><input type="text" name="hos_mobile" id="keywords" value="{$result['user_mobile']}" style="width: 400px" placeholder="请输入联系方式"></td>
+						</tr>
+<!-- 						<tr>
+						<th>地区：</th>
+						<td>
+							<select name="province" id="province">
+								<option value="">请选择</option>
+								<volist name="province" id="vo">
+								<option value="{$vo.area_id}">{$vo.area_name}</option>
+								</volist>
+							</select>
+							<select name="city">
+							</select>
+							<select name="area" >
+							</select>
+							<select name="stress">
+							</select>
+						</td>
+					</tr> -->
+<!-- 						<tr>
+							<th>服务详细地址</th>
+							<td>
+								<input type="text" style="width: 400px" name="hos_add" id=""  placeholder="机构详细地址">
+							</td>
+						</tr> -->
+<!-- 						<tr>
+							<th>排序</th>
+							<td>
+								<input type="text" style="width: 400px" name="sort" id="description"  placeholder="排序">
+							</td>
+						</tr> -->
+						<tr>
+							<th>负责内容</th>
+							<td>
+								<script type="text/plain" id="content" name="adv_content">{$result['user_content']}</script>
+							</td>
+						</tr>
+<!-- 						<tr>
+							<th>机构相册</th>
+							<td>
+								<fieldset>
+									<legend>图片列表</legend>
+									<ul id="photos" class="pic-list unstyled"></ul>
+								</fieldset>
+								<a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','','','')" class="btn btn-small">选择图片</a>
+							</td>
+						</tr> -->
+					</table>
+				</div>
+<!-- 				<div class="span3">
+					<table class="table table-bordered">
+						
+						<tr>
+							<th><b>发布时间</b></th>
+						</tr>
+						<tr>
+							<td><input type="text" name="post[post_modified]" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime" style="width: 160px;"></td>
+						</tr>
+						<tr>
+							<th><b>状态</b></th>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[post_status]" value="1" checked>审核通过</label>
+								<label class="radio"><input type="radio" name="post[post_status]" value="0">待审核</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[istop]" value="1">置顶</label>
+								<label class="radio"><input type="radio" name="post[istop]" value="0" checked>未置顶</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[recommended]" value="1">推荐</label>
+								<label class="radio"><input type="radio" name="post[recommended]" value="0" checked>未推荐</label>
+							</td>
+						</tr>
+					</table>
+				</div> -->
+			</div>
+			<div class="form-actions">
+				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
+				<a class="btn" href="{:U('Property/index')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.DIMAUB;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+
+				var formloading = false;
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+				});
+			});
+			////-------------------------
+		});
+	</script>
+</body>
+</html>

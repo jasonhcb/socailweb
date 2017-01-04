@@ -1,0 +1,15 @@
+[ 2016-11-04T14:22:25+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-11-04T14:22:29+08:00 ] ::1 /socailsys/index.php?g=&m=AdminPost&a=add&term=
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-11-04T14:22:33+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-11-04T14:22:37+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPost&a=recyclebin&menuid=33
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-11-04T14:22:37+08:00 ] ::1 /socailsys/index.php?g=Portal&m=AdminPage&a=recyclebin&menuid=36
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
